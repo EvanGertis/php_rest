@@ -17,7 +17,7 @@ class Database{
         } catch (PDOException $exception) {
             echo "Connection error: ".$exception->getMessage();
         }
-
+        echo "succesfully connected to db";
         return $this->conn;
     }
 }
