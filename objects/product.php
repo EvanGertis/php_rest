@@ -182,7 +182,15 @@ class Product{
     public function readPaging($from_record_num, $records_per_page){
 
         //select query.
-        $query = "SELECT c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created FROM ".$this->table_name." p LEFT JOIN categories c ON p.category _id = c.id ORDER BY p.created DESC LIMIT ?, ?;";
+        $query = "SELECT
+                c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
+            FROM
+                " . $this->table_name . " p
+                LEFT JOIN
+                    categories c
+                        ON p.category_id = c.id
+            ORDER BY p.created DESC
+            LIMIT ?, ?";
         
         //prepare query statement.
         $stmt = $this->conn->prepare($query);

@@ -1,6 +1,6 @@
 <?php 
 // show error reporting.
-init_set('display errors', 1);
+ini_set('display errors', 1);
 error_reporting(E_ALL);
 
 // home page url.
